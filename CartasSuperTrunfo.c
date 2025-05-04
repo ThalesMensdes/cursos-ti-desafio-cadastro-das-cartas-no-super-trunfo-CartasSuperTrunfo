@@ -6,11 +6,17 @@
 //Abaixo, vamos inserir a variavei que iremos trabalhar...
 int main() {
     char Estado[20], Estado2[20];
-    char Cod_carta [40], Cod_carta2[40];
-    char Nome_da_cidade [30], Nome_da_cidade2 [30];
+    char Cod_carta [50], Cod_carta2[50];
+    char Nome_da_cidade [40], Nome_da_cidade2 [40];
     int Populacao, Tot_Pontos_Turisticos, Populacao2, Tot_Pontos_Turisticos2;
     float Area_em_km2, Area_em_km22;
     float PIB, PIB2;
+
+    //Densidade Populacional
+    float DensP1, DensP2; 
+
+    //PIB per Capita
+    float PIBPC1, PIBPC2;
 
     //Estrutura para o usúario interagir e criar as cartas...
     //Cadastrando 2 cidades:
@@ -20,12 +26,12 @@ int main() {
 
     //O código da carta será uma letra como A, seguida de 0 e demonstrando a carta que voce esta cadastrando 1, 2 3...
     printf("Digite o nome do Estado: \n");
-    scanf("%s", & Estado);
+    scanf("%s", Estado);
     printf("Digite o Código da Carta: \n");
-    scanf("%s", & Cod_carta);
+    scanf("%s", Cod_carta);
 
     printf("Digite o Nome da Cidade: \n");
-    scanf("%s", & Nome_da_cidade);
+    scanf("%s", Nome_da_cidade);
 
     printf("Digite o total da População: \n");
     scanf("%d", & Populacao);
@@ -39,17 +45,22 @@ int main() {
     printf("Digite a quantidade de pontos turísticos: \n");
     scanf("%d", & Tot_Pontos_Turisticos);
 
+    //Calculo da Densiddade e do PIB Per Capita da Carta 1
+
+    DensP1= Populacao/Area_em_km2;
+    PIBPC1= PIB/Populacao;
+
     //Cadastro da Carta 2...
     printf ("Dados da Carta 2.. \n");
 
     //Pode-se usar outra iniciais de estado, desde que seja entre A e H, mantendo a regra estabelecida....
     printf("Digite o nome do Estado: \n");
-    scanf("%s", & Estado2);
+    scanf("%s", Estado2);
     printf("Digite o Código da Carta: \n");
-    scanf("%s", & Cod_carta2);
+    scanf("%s", Cod_carta2);
 
     printf("Digite o Nome da Cidade: \n");
-    scanf("%s", & Nome_da_cidade2);
+    scanf("%s", Nome_da_cidade2);
 
     printf("Digite o total da População: \n");
     scanf("%d", & Populacao2);
@@ -63,6 +74,11 @@ int main() {
     printf("Digite a quantidade de pontos turísticos: \n");
     scanf("%d", & Tot_Pontos_Turisticos2);
 
+    //Calculo da Densiddade e do PIB Per Capita da Carta 2
+
+    DensP2= Populacao2/Area_em_km22;
+    PIBPC2=PIB2/Populacao2;
+
     //Exibição dos dados inserido pelo usuario:
 
     //Carta 1:
@@ -71,9 +87,11 @@ int main() {
     printf("Código da Carta: %s \n", Cod_carta);
     printf("Nome da Cidade: %s \n", Nome_da_cidade);
     printf("Populacao: %d \n", Populacao);
-    printf("Extensão Territorial: %2.f km² \n", Area_em_km2);
-    printf("PIB: %2.f bilhões de reais\n", PIB);
+    printf("Extensão Territorial: %.2f km² \n", Area_em_km2);
+    printf("PIB: %.2f bilhões de reais\n", PIB);
     printf("Total de Pontos Turísticos: %d \n", Tot_Pontos_Turisticos);
+    printf("Densidade Populacional: %.2f hab/km² \n", DensP1);
+    printf("PIB Per Capita: %.2f  Reais \n", PIBPC1);
 
     //Carta 2:
 
@@ -83,9 +101,12 @@ int main() {
     printf("Nome da Cidade: %s \n", Nome_da_cidade2);
     printf("Populacao: %d \n", Populacao2);
     printf("Extensão Territorial: %2.f km² \n", Area_em_km22);
-    printf("PIB: %2.f  bilhões de reais\n", PIB2);
+    printf("PIB: %.2f  bilhões de reais\n", PIB2);
     printf("Total de Pontos Turísticos: %d \n", Tot_Pontos_Turisticos2);
+    printf("Densidade Populacional: %.2f hab/km² \n", DensP2);
+    printf("PIB Per Capita: %.2f Reais \n", PIBPC2);
 
     return 0;
-    //Feito por Thales
+
+    //feito por Thales
 }
